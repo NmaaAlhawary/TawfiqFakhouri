@@ -39,6 +39,37 @@ const PATHS = {
       <path d="M10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3" />
     </>
   ),
+  // sensor waves
+  sensor: (
+    <>
+      <circle cx="12" cy="17" r="2.2" />
+      <path d="M8.1 13.9a5.5 5.5 0 0 1 7.8 0M5.3 11.1a9.5 9.5 0 0 1 13.4 0" />
+    </>
+  ),
+  // AI spark
+  ai: (
+    <>
+      <rect x="4.5" y="4.5" width="15" height="15" rx="4" />
+      <circle cx="9.5" cy="10.5" r="1.1" />
+      <circle cx="14.5" cy="10.5" r="1.1" />
+      <path d="M9 15c1.8 1.3 4.2 1.3 6 0" />
+    </>
+  ),
+  // phone / app
+  app: (
+    <>
+      <rect x="7" y="2.8" width="10" height="18.4" rx="2.2" />
+      <path d="M10.5 5.6h3" />
+      <circle cx="12" cy="18.1" r="1" />
+    </>
+  ),
+  // lightbulb
+  idea: (
+    <>
+      <path d="M9 17a5.5 5.5 0 1 1 6 0v1.5H9V17Z" />
+      <path d="M10 21h4" />
+    </>
+  ),
   // quadcopter drone
   drone: (
     <>
