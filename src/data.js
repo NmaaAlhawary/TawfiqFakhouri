@@ -6,9 +6,8 @@ export const SECTIONS = [
   { id: 'featured', label: 'AI LiveGuard' },
   { id: 'award',    label: 'The award' },
   { id: 'projects', label: 'His projects' },
-  { id: 'tools',    label: 'What he builds with' },
   { id: 'certs',    label: 'Certificates' },
-  { id: 'about',    label: 'About' },
+  { id: 'tools',    label: 'What he builds with' },
 ];
 
 export const TOOLS = [
@@ -80,15 +79,15 @@ export const PROJECTS = [
     link: 'https://nmaas-team-1.adalo.com/ai',
   },
   {
-    src: 'img/game-shooting.jpg', cat: 'Code', title: 'Bird shooting game',
+    src: 'img/game-shooting.jpg', fit: 'contain', cat: 'Code', title: 'Bird shooting game',
     note: 'Scratch — score, speed and missed shots tracked with variables',
   },
   {
-    src: 'img/game-balloons.jpg', cat: 'Code', title: 'Balloon game',
+    src: 'img/game-balloons.jpg', fit: 'contain', cat: 'Code', title: 'Balloon game',
     note: 'Scratch — he wrote a real "Game Over" rule after 10 misses',
   },
   {
-    src: 'img/ai-face.jpg', cat: 'Code', title: 'AI face detection',
+    src: 'img/ai-face.jpg', fit: 'contain', cat: 'Code', title: 'AI face detection',
     note: 'PictoBlox — the camera finds a face and the box follows it',
   },
   {

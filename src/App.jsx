@@ -80,7 +80,7 @@ export default function App() {
 
           <div className="feature">
             <div className="fmedia">
-            <a className="video" href="https://youtu.be/PFmzdAx26yI" target="_blank" rel="noopener">
+            <a className="video" href="https://youtu.be/PFmzdAx26yI?t=30" target="_blank" rel="noopener">
               <img
                 src="img/video-poster.jpg"
                 alt="Tawfiq presenting the AI LiveGuard system to camera"
@@ -90,11 +90,6 @@ export default function App() {
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
               </span>
             </a>
-              <div className="shots">
-                <img src="img/app-2.jpg" alt="AI LiveGuard active players screen with fatigue levels" loading="lazy" />
-                <img src="img/app-3.jpg" alt="AI LiveGuard pitch view" loading="lazy" />
-              </div>
-              <p className="fnote">Two of the screens he designed and built in Adalo.</p>
             </div>
 
             <div className="fcopy">
@@ -152,21 +147,6 @@ export default function App() {
               <p className="wm">AI LiveGuard · 5–6 December 2025 · Hilton, Dead Sea</p>
             </div>
           </div>
-
-          <div className="strip" role="list">
-            {AWARD_PHOTOS.map((ph, i) => (
-              <button
-                className="shot"
-                role="listitem"
-                key={ph.src}
-                onClick={() => open(AWARD_PHOTOS, i)}
-                aria-label={'Enlarge: ' + ph.title}
-              >
-                <img src={ph.src} alt={ph.title} loading="lazy" />
-                <span><b>{ph.title}</b>{ph.note}</span>
-              </button>
-            ))}
-          </div>
         </section>
 
         <section className="sec" id="projects">
@@ -183,6 +163,19 @@ export default function App() {
           <Gallery items={shown} onOpen={open} showCat={filter === 'All'} />
         </section>
 
+
+        <section className="sec" id="certs">
+          <p className="sec-label">Certificates</p>
+          <h2>Where he has competed and trained</h2>
+          <p className="say">Tap one to read it.</p>
+          <div className="certs">
+            {CERTS.map((c, i) => (
+              <button key={c.src} onClick={() => open(CERTS, i)} aria-label={'Enlarge: ' + c.title}>
+                <img src={c.src} alt={c.title} loading="lazy" />
+              </button>
+            ))}
+          </div>
+        </section>
         <section className="sec" id="tools">
           <p className="sec-label">Toolkit</p>
           <h2>What he builds with</h2>
@@ -201,51 +194,6 @@ export default function App() {
           </div>
         </section>
 
-        <section className="sec" id="certs">
-          <p className="sec-label">Certificates</p>
-          <h2>Where he has competed and trained</h2>
-          <p className="say">Tap one to read it.</p>
-          <div className="certs">
-            {CERTS.map((c, i) => (
-              <button key={c.src} onClick={() => open(CERTS, i)} aria-label={'Enlarge: ' + c.title}>
-                <img src={c.src} alt={c.title} loading="lazy" />
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section className="sec" id="about">
-          <p className="sec-label">About</p>
-          <h2>About Tawfiq</h2>
-
-          <p className="abig">
-            Tawfiq is ten years old, and he has already built more than seventy things.
-          </p>
-
-          <p className="measure">
-            Robots that drive themselves. Games with rules he wrote. Circuits joined with his own
-            soldering iron. Drones he learned to fly in a simulator first, then for real.
-          </p>
-
-          <p className="measure">
-            But the part that sets him apart is not any one of those. It is what happens before the
-            building starts — <b>he looks at a problem and thinks of something that would solve it</b>.
-          </p>
-
-          <p className="measure">
-            That is where AI LiveGuard came from: a boy who noticed that tired footballers get hurt,
-            and decided the coach should be able to see it coming. It is also why the judges at the
-            Dead Sea handed him the <b>Creative Solution Award</b>.
-          </p>
-
-          <p className="measure">
-            He is on LEGO Mindstorms now, training for the next competition.
-          </p>
-
-          <p className="asign">
-            Everything here was built alongside his instructor, <b>Nmaa Al Hawary</b> · 2024 — 2026
-          </p>
-        </section>
 
         <footer>
           <span>Tawfiq Fakhouri · Portfolio</span>

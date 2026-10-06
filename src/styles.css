@@ -331,7 +331,7 @@
 /* ---------- featured project: video beside the story ---------- */
 .feature{display:grid;gap:clamp(20px,2.6vw,38px);align-items:start;grid-template-columns:1fr}
 @media (min-width:1040px){
-  .feature{grid-template-columns:minmax(0,1.3fr) minmax(300px,0.95fr)}
+  .feature{grid-template-columns:minmax(0,1.75fr) minmax(290px,0.85fr);align-items:center}
 }
 .feature .video{max-width:none}
 .fcopy{display:flex;flex-direction:column;gap:22px}
@@ -409,3 +409,7 @@
 /* ---------- featured: media column (video + app screens) ---------- */
 .fmedia{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,22px);min-width:0}
 .fmedia .shots{margin:0}
+
+/* ---------- wide screenshots: show the whole thing, don't crop ---------- */
+.card img.contain{object-fit:contain;background:#eef1f4}
+.card:hover img.contain{transform:none}
