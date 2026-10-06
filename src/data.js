@@ -6,8 +6,8 @@ export const SECTIONS = [
   { id: 'featured', label: 'AI LiveGuard' },
   { id: 'award',    label: 'Awards' },
   { id: 'projects', label: 'His projects' },
-  { id: 'certs',    label: 'Certificates' },
   { id: 'tools',    label: 'What he knows' },
+  { id: 'certs',    label: 'Certificates' },
 ];
 
 export const TOOLS = [
