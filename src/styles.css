@@ -714,3 +714,22 @@ h1.name::after{
 @media (min-width:900px){
   .award.has-photo{grid-template-columns:minmax(300px,0.95fr) minmax(0,1.05fr);align-items:center}
 }
+
+/* ---------- hero: looping robot clip fills the right side ---------- */
+.heroclip{display:none}
+@media (min-width:1000px){
+  .hero{position:relative}
+  .hero .inner{padding-right:clamp(360px,42vw,780px)}
+  .heroclip{
+    display:block;position:absolute;z-index:1;
+    top:50%;right:var(--gut);transform:translateY(-50%);
+    width:clamp(330px,38vw,700px);aspect-ratio:16/10;
+    object-fit:cover;border-radius:18px;
+    border:1px solid var(--line);background:#000;
+    box-shadow:0 40px 90px -40px rgba(0,0,0,.95),
+               0 0 0 1px rgba(255,122,47,.12),
+               0 0 90px -30px rgba(255,122,47,.35);
+    pointer-events:none;
+  }
+}
+@media (prefers-reduced-motion:reduce){ .heroclip{animation:none} }
