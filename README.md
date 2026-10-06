@@ -1,6 +1,11 @@
 # Tawfiq Portfolio
 
-Tawfiq Fakhouri's skills report — React + Vite.
+**Live site: https://nmaaalhawary.github.io/TawfiqFakhouri/**
+
+Portfolio of Tawfiq Fakhouri (age 10) — robots, games, electronics, AI and drones.
+Winner of the Creative Solution Award, Robot Football Olympics 2025.
+
+Built with React + Vite. Deploys to GitHub Pages automatically on every push to `main`.
 
 ## Run it
 
