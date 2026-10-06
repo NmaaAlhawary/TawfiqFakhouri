@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useRef } from 'react';
 
-/* Plays only while the card is on screen, so several clips never decode at once. */
+/* Plays only while the card is on screen, so several clips never decode at once.
+   The source files carry no audio track at all. */
 function InlineVideo({ item }) {
   const ref = useRef(null);
 
@@ -28,16 +29,18 @@ function InlineVideo({ item }) {
       muted
       loop
       playsInline
+      disablePictureInPicture
+      controlsList="nodownload noplaybackrate"
       preload="metadata"
       aria-label={item.title}
     />
   );
 }
 
-export default function Gallery({ items, onOpen, showCat }) {
+export default function Gallery({ items, showCat }) {
   return (
     <div className="gal">
-      {items.map((it, i) => {
+      {items.map((it) => {
         const inner = (
           <Fragment>
             <span className="ph">
@@ -46,14 +49,15 @@ export default function Gallery({ items, onOpen, showCat }) {
               ) : (
                 <img
                   src={it.src}
+                  className={it.fit === 'contain' ? 'contain' : undefined}
                   alt={it.title}
                   loading="lazy"
+                  draggable="false"
                   style={it.pos ? { objectPosition: it.pos } : undefined}
                 />
               )}
               {showCat && <span className="cat">{it.cat}</span>}
               {it.link && <span className="live">Open live ↗</span>}
-              {it.video && <span className="vbadge">Playing</span>}
             </span>
             <span className="cap"><b>{it.title}</b><span>{it.note}</span></span>
           </Fragment>
@@ -63,14 +67,7 @@ export default function Gallery({ items, onOpen, showCat }) {
             {inner}
           </a>
         ) : (
-          <button
-            className="card"
-            key={it.src}
-            onClick={() => onOpen(items, i)}
-            aria-label={(it.video ? 'Play full size: ' : 'Enlarge: ') + it.title}
-          >
-            {inner}
-          </button>
+          <div className="card" key={it.src}>{inner}</div>
         );
       })}
     </div>

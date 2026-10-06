@@ -1,15 +1,13 @@
-import { useState, useEffect, useCallback, Fragment } from 'react';
-import { SECTIONS, TOOLS, PROJECTS, CERTS, AWARD_PHOTOS } from './data.js';
+import { useState, useEffect, Fragment } from 'react';
+import { SECTIONS, TOOLS, PROJECTS, CERTS } from './data.js';
 import Rail from './components/Rail.jsx';
 import Gallery from './components/Gallery.jsx';
-import Lightbox from './components/Lightbox.jsx';
 import ToolIcon from './components/ToolIcon.jsx';
 
 export default function App() {
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
-  const [box, setBox] = useState(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -31,17 +29,6 @@ export default function App() {
       window.removeEventListener('resize', onScroll);
     };
   }, []);
-
-  useEffect(() => {
-    document.body.style.overflow = box ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [box]);
-
-  const open = useCallback((set, index) => setBox({ set, index }), []);
-  const move = useCallback(
-    (d) => setBox((b) => b && { ...b, index: (b.index + d + b.set.length) % b.set.length }),
-    []
-  );
 
   const cats = ['All', 'Robots', 'Code', 'Hands-on'];
   const count = (c) => (c === 'All' ? PROJECTS.length : PROJECTS.filter((p) => p.cat === c).length);
@@ -122,16 +109,12 @@ export default function App() {
           <p className="say">Robot Football Olympics 2025 · Dead Sea, Jordan</p>
 
           <div className="award has-photo">
-            <button
-              className="awardshot"
-              onClick={() => open(AWARD_PHOTOS, 0)}
-              aria-label="Enlarge: the team"
-            >
+            <div className="awardshot">
               <img
                 src="img/team.jpg"
                 alt="Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built"
               />
-            </button>
+            </div>
             <div>
               <p className="wk">🏆 Robotna · Robot Football Olympics 2025</p>
               <p className="wt">Most creative<br />solution</p>
@@ -151,7 +134,7 @@ export default function App() {
         <section className="sec" id="projects">
           <p className="sec-label">The work</p>
           <h2>A selection of his work</h2>
-          <p className="say">Thirteen of the 70+ projects he has built. Tap any one to see it up close — some of them play.</p>
+          <p className="say">Thirteen of the 70+ projects he has built.</p>
           <div className="filters">
             {cats.map((c) => (
               <button key={c} className={filter === c ? 'on' : ''} onClick={() => setFilter(c)}>
@@ -159,19 +142,19 @@ export default function App() {
               </button>
             ))}
           </div>
-          <Gallery items={shown} onOpen={open} showCat={filter === 'All'} />
+          <Gallery items={shown} showCat={filter === 'All'} />
         </section>
 
 
         <section className="sec" id="certs">
           <p className="sec-label">Certificates</p>
           <h2>Where he has competed and trained</h2>
-          <p className="say">Tap one to read it.</p>
+          
           <div className="certs">
-            {CERTS.map((c, i) => (
-              <button key={c.src} onClick={() => open(CERTS, i)} aria-label={'Enlarge: ' + c.title}>
-                <img src={c.src} alt={c.title} loading="lazy" />
-              </button>
+            {CERTS.map((c) => (
+              <div className="certcard" key={c.src}>
+                <img src={c.src} alt={c.title} loading="lazy" draggable="false" />
+              </div>
             ))}
           </div>
         </section>
@@ -200,9 +183,6 @@ export default function App() {
         </footer>
       </div>
 
-      {box && (
-        <Lightbox set={box.set} index={box.index} onClose={() => setBox(null)} onMove={move} />
-      )}
     </Fragment>
   );
 }

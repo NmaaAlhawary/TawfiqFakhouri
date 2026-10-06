@@ -449,3 +449,13 @@
   .lb .prev{left:6px}
   .lb .next{right:6px}
 }
+
+/* ---------- media is display-only: no opening, no dragging, no sound ---------- */
+.card,.certcard,.awardshot{cursor:default}
+.card.linked{cursor:pointer}
+.card img,.card video,.certcard img,.awardshot img,.team img{
+  -webkit-user-drag:none;user-select:none;pointer-events:none}
+.certcard{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;
+  transition:border-color .25s,transform .25s}
+.certcard:hover{border-color:var(--amber-dim);transform:translateY(-3px)}
+.certcard img{width:100%;display:block;max-width:100%}
