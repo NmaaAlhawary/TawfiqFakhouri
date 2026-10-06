@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { SECTIONS, TOOLS, PROJECTS, CERTS } from './data.js';
+import { SECTIONS, TOOLS, PROJECTS, CERTS, AWARDS } from './data.js';
 import Rail from './components/Rail.jsx';
 import Gallery from './components/Gallery.jsx';
 import ToolIcon from './components/ToolIcon.jsx';
@@ -89,9 +89,10 @@ export default function App() {
             <p className="lede">
               Everything here is something Tawfiq actually built — robots that run, games he
               programmed, circuits he soldered, and an app he invented that
-              <em> won an award at an international competition</em>.
+              <em> won awards at two robotics competitions</em>.
             </p>
             <div className="chips">
+              <span className="chip win"><b>🥇</b> 1st place · Robofest 2026</span>
               <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
               <span className="chip"><b>70+</b> projects</span>
               <span className="chip"><b>4</b> certificates</span>
@@ -142,37 +143,33 @@ export default function App() {
         </section>
 
         <section className="sec" id="award">
-          <p className="sec-label">Award</p>
-          <h2>Creative Solution Award</h2>
-          <p className="say">Robot Football Olympics 2025 · Dead Sea, Jordan</p>
+          <p className="sec-label">Awards</p>
+          <h2>Two competitions, two wins</h2>
+          <p className="say">Robofest 2026 and the Robot Football Olympics 2025.</p>
 
-          <div className="award has-photo">
-            <div className="awardshot">
-              <img
-                src="img/team.jpg"
-                alt="Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built"
-              />
+          {AWARDS.map((a, i) => (
+            <div className={'award has-photo' + (i === 0 ? ' lead' : '')} key={a.title}>
+              <div className="awardshot">
+                <img src={a.photo} alt={a.alt} loading="lazy" draggable="false" />
+              </div>
+              <div>
+                <p className="wk">{a.kicker}</p>
+                <p className="wt">{a.title}</p>
+                <p className="wd" dangerouslySetInnerHTML={{ __html: a.text }} />
+                <p className="wm">
+                  {a.meta.map((x, k) => (
+                    <span key={x} className={['b', 'i', 'em'][k] || 'i'}>{x}</span>
+                  ))}
+                </p>
+              </div>
             </div>
-            <div>
-              <p className="wk">🏆 Robotna · Robot Football Olympics 2025</p>
-              <p className="wt">Most creative<br />solution</p>
-              <p className="wd">
-                Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for
-                the <b>most creative solution</b> — judged on the strength of the idea itself.
-              </p>
-              <p className="wm">
-                <b>AI LiveGuard</b>
-                <i>5–6 December 2025</i>
-                <em>Hilton, Dead Sea</em>
-              </p>
-            </div>
-          </div>
+          ))}
         </section>
 
         <section className="sec" id="projects">
           <p className="sec-label">The work</p>
           <h2>A selection of his work</h2>
-          <p className="say">Thirteen of the 70+ projects he has built.</p>
+          <p className="say">Sixteen of the 70+ projects he has built.</p>
           <div className="filters">
             {cats.map((c) => (
               <button key={c} className={filter === c ? 'on' : ''} onClick={() => setFilter(c)}>

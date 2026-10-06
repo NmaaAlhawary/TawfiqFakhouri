@@ -4,7 +4,7 @@
 export const SECTIONS = [
   { id: 'top',      label: 'Start' },
   { id: 'featured', label: 'AI LiveGuard' },
-  { id: 'award',    label: 'The award' },
+  { id: 'award',    label: 'Awards' },
   { id: 'projects', label: 'His projects' },
   { id: 'certs',    label: 'Certificates' },
   { id: 'tools',    label: 'What he knows' },
@@ -74,6 +74,21 @@ export const PROJECTS = [
     note: 'SPIKE Prime — his build, his code, running',
   },
   {
+    src: 'img/vid-build-b.jpg', video: 'videos/build-b.mp4', cat: 'Robots',
+    title: 'Gear-driven display robot',
+    note: 'SPIKE Prime \u2014 motors, gears and a light-matrix readout, running his code',
+  },
+  {
+    src: 'img/vid-build-a.jpg', video: 'videos/build-a.mp4', cat: 'Robots',
+    title: 'Sensor rover',
+    note: 'SPIKE Prime \u2014 ultrasonic sensor mounted on a drive base he designed',
+  },
+  {
+    src: 'img/robofest.jpg', cat: 'Robots',
+    title: 'Jump energy measurer',
+    note: 'SPIKE Prime \u2014 measures a jump and calculates the potential energy live (406 J)',
+  },
+  {
     src: 'img/spike-arm.jpg', fit: 'contain', cat: 'Robots', title: 'Robotic arm',
     note: 'SPIKE Prime — a gripper that opens and closes',
   },
@@ -118,6 +133,27 @@ export const PROJECTS = [
   {
     src: 'img/rubiks.jpg', cat: 'Hands-on', title: "Rubik's cube",
     note: 'Two layers solved — a real method, not guessing',
+  },
+];
+
+export const AWARDS = [
+  {
+    kicker: '\ud83e\udd47 Robofest 2026',
+    title: 'First place',
+    text: 'Tawfiq took <b>first place at Robofest 2026</b> \u2014 his second competition win, and the '
+        + 'first one on the podium. He designed, built and programmed the robot himself.',
+    meta: ['Robofest', '2026', '1st place'],
+    photo: 'img/robofest.jpg',
+    alt: 'Tawfiq holding the Robofest first-place trophy on stage',
+  },
+  {
+    kicker: '\ud83c\udfc6 Robot Football Olympics 2025',
+    title: 'Creative Solution Award',
+    text: 'Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for the '
+        + '<b>most creative solution</b> \u2014 judged on the strength of the idea itself.',
+    meta: ['AI LiveGuard', '5\u20136 December 2025', 'Hilton, Dead Sea'],
+    photo: 'img/team.jpg',
+    alt: 'Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built',
   },
 ];
 

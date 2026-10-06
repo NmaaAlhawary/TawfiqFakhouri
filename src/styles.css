@@ -423,11 +423,11 @@
 
 /* award meta line: colour-coded project / date / place */
 .award .wm{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
-.award .wm b,.award .wm i,.award .wm em{font-style:normal;font-weight:500;
+.award .wm span{font-style:normal;font-weight:500;
   border-radius:999px;padding:5px 12px;border:1px solid transparent;letter-spacing:.04em}
-.award .wm b{color:var(--amber);background:rgba(255,122,47,.12);border-color:var(--amber-dim);font-weight:600}
-.award .wm i{color:var(--text-soft);background:rgba(255,255,255,.04);border-color:var(--line)}
-.award .wm em{color:var(--led);background:rgba(47,224,192,.09);border-color:rgba(47,224,192,.28)}
+.award .wm .b{color:var(--amber);background:rgba(255,122,47,.12);border-color:var(--amber-dim);font-weight:600}
+.award .wm .i{color:var(--text-soft);background:rgba(255,255,255,.04);border-color:var(--line)}
+.award .wm .em{color:var(--led);background:rgba(47,224,192,.09);border-color:rgba(47,224,192,.28)}
 
 /* ---------- lightbox: always fit inside the screen ---------- */
 .lb{overflow:hidden;height:100%;
@@ -598,3 +598,13 @@ h1.name::after{
   background:rgba(255,122,47,.12)}
 .srow.star .sitems span{color:var(--text)}
 .srow.star .sitems span::after{background:var(--amber-dim)}
+
+/* two awards stacked, the newest one leading */
+#award .award{margin-bottom:clamp(18px,2.4vw,28px)}
+#award .award:last-child{margin-bottom:0}
+#award .award.lead .wt{font-size:clamp(32px,5vw,64px)}
+#award .award:not(.lead){
+  box-shadow:none;border-color:var(--line);
+  background:linear-gradient(145deg,rgba(255,122,47,.055),var(--panel) 60%);
+}
+#award .award:not(.lead)::after{opacity:.45}
