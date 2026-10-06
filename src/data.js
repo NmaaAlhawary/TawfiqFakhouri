@@ -56,6 +56,7 @@ export const TOOLS = [
   {
     name: 'Problem solving',
     icon: 'idea',
+    star: true,
     meta: 'Where every project starts',
     items: ['Spots a real problem', 'Invents the solution', 'Defends the design', 'Award-winning idea'],
   },

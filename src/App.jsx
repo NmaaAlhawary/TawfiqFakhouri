@@ -200,12 +200,16 @@ export default function App() {
           <p className="sec-label">Skills</p>
           <h2>What he is familiar with</h2>
           <p className="say">Eight areas, built up across more than seventy projects.</p>
-          <div className="plats">
+          <div className="skills">
             {TOOLS.map((t) => (
-              <div className={'plat' + (t.now ? ' now' : '')} key={t.name}>
-                <span className="tbadge"><ToolIcon name={t.icon} /></span>
-                <h3>{t.name}</h3>
-                <p className="meta">{t.meta}</p>
+              <div className={'srow' + (t.star ? ' star' : '')} key={t.name}>
+                <div className="sid">
+                  <span className="tbadge"><ToolIcon name={t.icon} /></span>
+                  <span className="sname">
+                    <b>{t.name}</b>
+                    <i>{t.meta}</i>
+                  </span>
+                </div>
                 <ul className="made">
                   {t.items.map((x) => <li key={x}>{x}</li>)}
                 </ul>

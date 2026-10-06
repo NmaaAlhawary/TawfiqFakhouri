@@ -514,3 +514,36 @@ h1.name::after{
 /* featured heading sits above the video, full width */
 .fhead{margin-bottom:12px}
 #featured > .fintro{max-width:60ch;margin:0 0 clamp(24px,3vw,40px)}
+
+/* ---------- skills: spec-sheet rows, not cards ---------- */
+.skills{border-top:1px solid var(--line)}
+.srow{
+  display:grid;gap:clamp(14px,2vw,40px);align-items:start;
+  grid-template-columns:1fr;
+  padding-block:clamp(18px,2.2vw,26px);
+  border-bottom:1px solid var(--line);
+  transition:background .25s ease;
+}
+@media (min-width:860px){
+  .srow{grid-template-columns:minmax(260px,.9fr) minmax(0,1.6fr);align-items:center}
+}
+.srow:hover{background:rgba(255,255,255,.018)}
+
+.sid{display:flex;align-items:center;gap:16px;min-width:0}
+.sid .tbadge{margin:0;flex:none}
+.sname{display:flex;flex-direction:column;gap:3px;min-width:0}
+.sname b{font-family:"Archivo",sans-serif;font-weight:600;font-stretch:87%;
+  font-size:clamp(16px,1.8vw,20px);color:var(--text);letter-spacing:-.012em;line-height:1.2}
+.sname i{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
+
+.skills .made{gap:8px}
+.skills .made li{font-size:12px;padding:7px 14px}
+
+/* the standout row */
+.srow.star{background:linear-gradient(90deg,rgba(255,122,47,.07),transparent 65%)}
+.srow.star .sname b{color:var(--amber)}
+.srow.star .sname i{color:var(--amber)}
+.srow.star .tbadge{color:var(--amber);border-color:var(--amber-dim);
+  background:rgba(255,122,47,.1)}
+.srow.star .made li{border-color:var(--amber-dim);color:var(--text)}
