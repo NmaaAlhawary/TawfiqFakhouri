@@ -84,11 +84,6 @@ export const PROJECTS = [
     note: 'SPIKE Prime \u2014 ultrasonic sensor mounted on a drive base he designed',
   },
   {
-    src: 'img/robofest.jpg', cat: 'Robots',
-    title: 'Jump energy measurer',
-    note: 'SPIKE Prime \u2014 measures a jump and calculates the potential energy live (406 J)',
-  },
-  {
     src: 'img/spike-arm.jpg', fit: 'contain', cat: 'Robots', title: 'Robotic arm',
     note: 'SPIKE Prime — a gripper that opens and closes',
   },

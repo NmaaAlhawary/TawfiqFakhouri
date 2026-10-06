@@ -169,7 +169,7 @@ export default function App() {
         <section className="sec" id="projects">
           <p className="sec-label">The work</p>
           <h2>A selection of his work</h2>
-          <p className="say">Sixteen of the 70+ projects he has built.</p>
+          <p className="say">Fifteen of the 70+ projects he has built.</p>
           <div className="filters">
             {cats.map((c) => (
               <button key={c} className={filter === c ? 'on' : ''} onClick={() => setFilter(c)}>
