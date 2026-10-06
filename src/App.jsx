@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
 import { SECTIONS, TOOLS, PROJECTS, CERTS, AWARDS } from './data.js';
-import Rail from './components/Rail.jsx';
 import Gallery from './components/Gallery.jsx';
 import ToolIcon from './components/ToolIcon.jsx';
 
@@ -107,7 +106,6 @@ export default function App() {
   return (
     <Fragment>
       <div className="progress" style={{ width: pct + '%' }} />
-      <Rail active={active} />
 
       <div className="main">
 
