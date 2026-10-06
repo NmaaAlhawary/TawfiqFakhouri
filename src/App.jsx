@@ -57,10 +57,9 @@ export default function App() {
         <header className="hero" id="top">
           <span className="glow" /><span className="grid" />
           <div className="inner">
-            <img className="portrait" src="img/tawfiq.jpg" alt="Tawfiq Fakhouri" />
             <p className="eyebrow">Portfolio · 2024 — 2026</p>
             <h1>Tawfiq<br />Fakhouri</h1>
-            <p className="sub">10 years old · Robot builder · Coder · Maker</p>
+            <p className="sub">Ten years old · <b>He finds the problem, then builds the answer</b></p>
             <p className="lede">
               Everything here is something Tawfiq actually built — robots that run, games he
               programmed, circuits he soldered, and an app he invented that
@@ -223,18 +222,33 @@ export default function App() {
         <section className="sec" id="about">
           <p className="sec-label">About</p>
           <h2>About Tawfiq</h2>
-          <p className="measure" style={{ fontSize: 'clamp(18px,2vw,23px)', lineHeight: 1.5 }}>
-            Tawfiq is ten. He builds robots, writes games, solders his own circuits and flies FPV
-            drones — and the thing he does best is <b>look at a problem and think of something to
-            build that would solve it</b>.
+
+          <p className="abig">
+            Tawfiq is ten years old, and he has already built more than seventy things.
           </p>
+
           <p className="measure">
-            That is how AI LiveGuard started, and it is why the judges at the Dead Sea gave him the
-            Creative Solution Award. He is now training on LEGO Mindstorms for competition.
+            Robots that drive themselves. Games with rules he wrote. Circuits joined with his own
+            soldering iron. Drones he learned to fly in a simulator first, then for real.
           </p>
+
           <p className="measure">
-            Everything in this portfolio was built with his instructor, <b>Nmaa Al Hawary</b>, between
-            2024 and 2026.
+            But the part that sets him apart is not any one of those. It is what happens before the
+            building starts — <b>he looks at a problem and thinks of something that would solve it</b>.
+          </p>
+
+          <p className="measure">
+            That is where AI LiveGuard came from: a boy who noticed that tired footballers get hurt,
+            and decided the coach should be able to see it coming. It is also why the judges at the
+            Dead Sea handed him the <b>Creative Solution Award</b>.
+          </p>
+
+          <p className="measure">
+            He is on LEGO Mindstorms now, training for the next competition.
+          </p>
+
+          <p className="asign">
+            Everything here was built alongside his instructor, <b>Nmaa Al Hawary</b> · 2024 — 2026
           </p>
         </section>
 
