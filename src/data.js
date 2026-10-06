@@ -69,7 +69,7 @@ export const PROJECTS = [
   {
     src: 'img/vid-soldering.jpg', video: 'videos/soldering.mp4', cat: 'Hands-on',
     title: 'Soldering',
-    note: 'Iron in hand, mask on. He makes the joint himself',
+    note: 'Hot iron, steady hands. Every joint on the board is his own',
   },
   {
     src: 'img/vid-line-follower.jpg', video: 'videos/line-follower.mp4', cat: 'Robots',
