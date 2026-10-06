@@ -85,7 +85,7 @@ export const PROJECTS = [
     note: 'mBot2 with an ultrasonic sensor and a servo gripper — built for the tournament',
   },
   {
-    src: 'img/app-1.jpg', cat: 'Code', title: 'AI LiveGuard app',
+    src: 'img/app-1.jpg', fit: 'contain', cat: 'Code', title: 'AI LiveGuard app',
     note: 'His own app idea, built in Adalo. Tap to open the real app.',
     link: 'https://nmaas-team-1.adalo.com/ai',
   },

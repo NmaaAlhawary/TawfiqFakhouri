@@ -411,7 +411,7 @@
 .fmedia .shots{margin:0}
 
 /* ---------- wide screenshots: show the whole thing, don't crop ---------- */
-.card img.contain{object-fit:contain;background:#eef1f4}
+.card img.contain{object-fit:contain;background:#eef1f4;padding:8px}
 .card:hover img.contain{transform:none}
 
 /* featured: heading lives inside the copy column, so nothing floats alone */
