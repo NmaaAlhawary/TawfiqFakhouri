@@ -14,34 +14,40 @@ export const SECTIONS = [
 export const TOOLS = [
   {
     name: 'LEGO SPIKE Prime',
-    meta: 'His main build platform',
-    text: 'Push-up robot, robotic arm, hopper racer, line follower. He knows the pieces, the gears and the motors well enough to invent his own designs instead of following a manual.',
+    icon: 'brick',
+    meta: 'Main build platform',
+    items: ['Push-up robot', 'Robotic arm', 'Hopper racer', 'Line follower'],
   },
   {
     name: 'mBot2',
+    icon: 'rover',
     meta: 'Driving, sensors, live control',
-    text: 'He programs it to drive, turn, stop and read its sensors — and he paired it with a game controller so he could drive the spider robot live.',
+    items: ['Spider robot', 'Game-controller driving', 'Competition robot'],
   },
   {
     name: 'Scratch & PictoBlox',
-    meta: 'Where his games get made',
-    text: 'Shooting games, a fruit catcher, a sea game played with your hands in the air, and face detection with the camera. All built from scratch with variables, loops and if / else.',
+    icon: 'blocks',
+    meta: 'Games and AI',
+    items: ['Bird shooter', 'Balloon game', 'Fruit catcher', 'Face detection', 'Hand-tracking sea game'],
   },
   {
     name: 'LEGO Mindstorms',
+    icon: 'trophy',
     meta: 'Competition platform',
     now: true,
-    text: 'The kit he is on now, training for competition — harder challenges with accuracy, speed and reliability all being scored.',
+    items: ['Training on it now'],
   },
   {
     name: 'micro:bit · Makey Makey · Maker Coder',
+    icon: 'chip',
     meta: 'Lots of small builds',
-    text: 'Many micro:bit projects, everyday objects turned into piano keys and game controllers, and a working robot built on Maker Coder.',
+    items: ['Many micro:bit projects', 'Piano from everyday objects', 'Maker Coder robot'],
   },
   {
-    name: 'Electronics, soldering & FPV drones',
+    name: 'Electronics & FPV drones',
+    icon: 'drone',
     meta: 'Hands and wires',
-    text: 'Real circuits built by hand, his own soldered joints, and FPV drones — simulator practice first, then flying the real thing.',
+    items: ['Hand-built circuits', 'Soldering', 'Drone simulator', 'Real FPV flying'],
   },
 ];
 
@@ -61,12 +67,12 @@ export const PROJECTS = [
     note: 'SPIKE Prime — a gripper that opens and closes',
   },
   {
-    src: 'img/spike-hopper.jpg', cat: 'Robots', title: 'Hopper race robot',
+    src: 'img/spike-hopper.jpg', pos: 'center 72%', cat: 'Robots', title: 'Hopper race robot',
     note: 'SPIKE Prime — built small and fast on purpose',
   },
   {
-    src: 'img/mbot2-spider.jpg', cat: 'Robots', title: 'Spider robot + controller',
-    note: 'mBot2 — he drives it live with a game controller',
+    src: 'img/rfo-robot.jpg', cat: 'Robots', title: 'Competition robot',
+    note: 'mBot2 with an ultrasonic sensor and a servo gripper — built for the tournament',
   },
   {
     src: 'img/app-1.jpg', cat: 'Code', title: 'AI LiveGuard app',
@@ -106,12 +112,12 @@ export const PROJECTS = [
 
 export const AWARD_PHOTOS = [
   {
-    src: 'img/award-stage.jpg', title: 'Lifting the cup on stage',
-    note: 'Robot Football Olympics 2025 · Dead Sea, Jordan',
+    src: 'img/team.jpg', title: 'The team',
+    note: 'Tawfiq and Zaid with their coach Nmaa Al Hawary, and the robot they built',
   },
   {
-    src: 'img/award-ceremony.jpg', title: 'Tawfiq and Zaid with the trophy',
-    note: 'Creative Solution Award · 5–6 December 2025',
+    src: 'img/rfo-robot.jpg', title: 'Their competition robot',
+    note: 'mBot2 with an ultrasonic sensor and a servo gripper — built for the tournament',
   },
 ];
 

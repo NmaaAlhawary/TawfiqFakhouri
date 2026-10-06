@@ -1,4 +1,38 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useRef } from 'react';
+
+/* Plays only while the card is on screen, so several clips never decode at once. */
+function InlineVideo({ item }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) el.play().catch(() => {});
+        else el.pause();
+      },
+      { threshold: 0.3 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={ref}
+      src={item.video}
+      poster={item.src}
+      muted
+      loop
+      playsInline
+      preload="metadata"
+      aria-label={item.title}
+    />
+  );
+}
 
 export default function Gallery({ items, onOpen, showCat }) {
   return (
@@ -7,15 +41,19 @@ export default function Gallery({ items, onOpen, showCat }) {
         const inner = (
           <Fragment>
             <span className="ph">
-              <img src={it.src} alt={it.title} loading="lazy" />
+              {it.video ? (
+                <InlineVideo item={it} />
+              ) : (
+                <img
+                  src={it.src}
+                  alt={it.title}
+                  loading="lazy"
+                  style={it.pos ? { objectPosition: it.pos } : undefined}
+                />
+              )}
               {showCat && <span className="cat">{it.cat}</span>}
               {it.link && <span className="live">Open live ↗</span>}
-              {it.video && (
-                <span className="vbadge">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
-                  Video
-                </span>
-              )}
+              {it.video && <span className="vbadge">Playing</span>}
             </span>
             <span className="cap"><b>{it.title}</b><span>{it.note}</span></span>
           </Fragment>
@@ -29,7 +67,7 @@ export default function Gallery({ items, onOpen, showCat }) {
             className="card"
             key={it.src}
             onClick={() => onOpen(items, i)}
-            aria-label={(it.video ? 'Play: ' : 'Enlarge: ') + it.title}
+            aria-label={(it.video ? 'Play full size: ' : 'Enlarge: ') + it.title}
           >
             {inner}
           </button>

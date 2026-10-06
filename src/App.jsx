@@ -3,6 +3,7 @@ import { SECTIONS, TOOLS, PROJECTS, CERTS, AWARD_PHOTOS } from './data.js';
 import Rail from './components/Rail.jsx';
 import Gallery from './components/Gallery.jsx';
 import Lightbox from './components/Lightbox.jsx';
+import ToolIcon from './components/ToolIcon.jsx';
 
 export default function App() {
   const [active, setActive] = useState('top');
@@ -56,6 +57,7 @@ export default function App() {
         <header className="hero" id="top">
           <span className="glow" /><span className="grid" />
           <div className="inner">
+            <img className="portrait" src="img/tawfiq.jpg" alt="Tawfiq Fakhouri" />
             <p className="eyebrow">Portfolio · 2024 — 2026</p>
             <h1>Tawfiq<br />Fakhouri</h1>
             <p className="sub">10 years old · Robot builder · Coder · Maker</p>
@@ -66,9 +68,8 @@ export default function App() {
             </p>
             <div className="chips">
               <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
-              <span className="chip"><b>13</b> projects</span>
+              <span className="chip"><b>70+</b> projects</span>
               <span className="chip"><b>4</b> certificates</span>
-              <span className="chip">LEGO · mBot2 · Scratch · drones</span>
             </div>
           </div>
         </header>
@@ -77,31 +78,57 @@ export default function App() {
           <p className="sec-label">Featured project</p>
           <h2>AI LiveGuard</h2>
           <p className="say">He invented it, designed it, built the app, and presented it himself.</p>
-          <a className="video" href="https://youtu.be/PFmzdAx26yI" target="_blank" rel="noopener">
-            <img
-              src="img/video-poster.jpg"
-              alt="Tawfiq presenting the AI LiveGuard system beside a diagram of a conductive sports vest"
-            />
-            <span className="shade" />
-            <span className="play">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
-            </span>
-            <span className="cap">
-              <span className="kicker">Watch him present it · 2 minutes</span>
-              <p className="vt">AI LiveGuard System</p>
-              <p className="vm">Tawfiq Fakhouri &amp; Zaid Diken · opens on YouTube</p>
-            </span>
-          </a>
-          <p className="measure" style={{ marginTop: '26px' }}>
-            Football players wear a sensor vest. An app watches their heart rate, speed and
-            tiredness in real time, then tells the coach who should be substituted. Tawfiq found the
-            problem himself, designed the solution, and built the app screens in Adalo.
-          </p>
-          <p className="measure">
-            <a href="https://nmaas-team-1.adalo.com/ai" target="_blank" rel="noopener" className="btn">
-              Open the app ↗
+
+          <div className="feature">
+            <a className="video" href="https://youtu.be/PFmzdAx26yI" target="_blank" rel="noopener">
+              <img
+                src="img/video-poster.jpg"
+                alt="Tawfiq presenting the AI LiveGuard system to camera"
+              />
+              <span className="shade" />
+              <span className="play">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
+              </span>
+              <span className="cap">
+                <span className="kicker">Watch him present it · 2 minutes</span>
+                <p className="vt">AI LiveGuard System</p>
+                <p className="vm">Tawfiq Fakhouri &amp; Zaid Diken · opens on YouTube</p>
+              </span>
             </a>
-          </p>
+
+            <div className="fcopy">
+              <p className="fintro">
+                Football injuries happen when tired players stay on the pitch. Tawfiq's answer: let
+                the coach <b>see the tiredness before the injury</b>.
+              </p>
+
+              <ol className="how">
+                <li>
+                  <b>A sensor vest</b>
+                  <span>Heart rate, speed and distance, straight off the player.</span>
+                </li>
+                <li>
+                  <b>The app watches</b>
+                  <span>It turns all of that into one fatigue number per player.</span>
+                </li>
+                <li>
+                  <b>The coach gets told</b>
+                  <span>Who to take off now, and who is ready to come on.</span>
+                </li>
+              </ol>
+
+              <div className="shots">
+                <img src="img/app-1.jpg" alt="AI LiveGuard app home screen" loading="lazy" />
+                <img src="img/app-2.jpg" alt="AI LiveGuard active players screen" loading="lazy" />
+                <img src="img/app-3.jpg" alt="AI LiveGuard substitutes screen" loading="lazy" />
+              </div>
+
+              <a href="https://nmaas-team-1.adalo.com/ai" target="_blank" rel="noopener" className="btn">
+                Open the app ↗
+              </a>
+              <p className="fnote">He found the problem, designed the solution and built every screen in Adalo.</p>
+            </div>
+          </div>
         </section>
 
         <section className="sec" id="award">
@@ -113,11 +140,11 @@ export default function App() {
             <button
               className="awardshot"
               onClick={() => open(AWARD_PHOTOS, 0)}
-              aria-label="Enlarge: lifting the cup on stage"
+              aria-label="Enlarge: the team"
             >
               <img
-                src="img/award-stage.jpg"
-                alt="Tawfiq lifting the trophy on stage with his teammate and coach"
+                src="img/team.jpg"
+                alt="Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built"
               />
             </button>
             <div>
@@ -129,18 +156,29 @@ export default function App() {
                 how fast the robot ran.
               </p>
               <p className="wm">AI LiveGuard · 5–6 December 2025 · Hilton, Dead Sea</p>
-              <button className="awardmore" onClick={() => open(AWARD_PHOTOS, 1)}>
-                <img src="img/award-ceremony.jpg" alt="Tawfiq and Zaid holding the trophy" />
-                <span>See both photos →</span>
-              </button>
             </div>
+          </div>
+
+          <div className="strip" role="list">
+            {AWARD_PHOTOS.map((ph, i) => (
+              <button
+                className="shot"
+                role="listitem"
+                key={ph.src}
+                onClick={() => open(AWARD_PHOTOS, i)}
+                aria-label={'Enlarge: ' + ph.title}
+              >
+                <img src={ph.src} alt={ph.title} loading="lazy" />
+                <span><b>{ph.title}</b>{ph.note}</span>
+              </button>
+            ))}
           </div>
         </section>
 
         <section className="sec" id="projects">
           <p className="sec-label">The work</p>
-          <h2>Thirteen things he built</h2>
-          <p className="say">Tap any one to see it up close — some of them play.</p>
+          <h2>A selection of his work</h2>
+          <p className="say">Thirteen of the 70+ projects he has built. Tap any one to see it up close — some of them play.</p>
           <div className="filters">
             {cats.map((c) => (
               <button key={c} className={filter === c ? 'on' : ''} onClick={() => setFilter(c)}>
@@ -158,9 +196,12 @@ export default function App() {
           <div className="plats">
             {TOOLS.map((t) => (
               <div className={'plat' + (t.now ? ' now' : '')} key={t.name}>
+                <span className="tbadge"><ToolIcon name={t.icon} /></span>
                 <h3>{t.name}</h3>
                 <p className="meta">{t.meta}</p>
-                <p>{t.text}</p>
+                <ul className="made">
+                  {t.items.map((x) => <li key={x}>{x}</li>)}
+                </ul>
               </div>
             ))}
           </div>
@@ -177,10 +218,6 @@ export default function App() {
               </button>
             ))}
           </div>
-          <figure className="team">
-            <img src="img/rfo-team.jpg" alt="Tawfiq with his teammate at the robotics competition" />
-            <figcaption>With his teammate Zaid at the Dead Sea.</figcaption>
-          </figure>
         </section>
 
         <section className="sec" id="about">
