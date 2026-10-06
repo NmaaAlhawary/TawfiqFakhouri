@@ -428,3 +428,24 @@
 .award .wm b{color:var(--amber);background:rgba(255,122,47,.12);border-color:var(--amber-dim);font-weight:600}
 .award .wm i{color:var(--text-soft);background:rgba(255,255,255,.04);border-color:var(--line)}
 .award .wm em{color:var(--led);background:rgba(47,224,192,.09);border-color:rgba(47,224,192,.28)}
+
+/* ---------- lightbox: always fit inside the screen ---------- */
+.lb{overflow:hidden;height:100%;
+  grid-template-rows:minmax(0,1fr) auto;
+  padding:clamp(56px,7vh,84px) clamp(56px,7vw,96px) clamp(18px,3vh,32px)}
+.lb .stage{min-height:0;min-width:0;overflow:hidden;display:grid;place-items:center}
+.lb .stage img,
+.lb .stage video{
+  display:block;width:auto;height:auto;
+  max-width:100%;max-height:100%;
+  object-fit:contain;border-radius:10px;
+  box-shadow:0 30px 90px -30px rgba(0,0,0,.9);
+}
+.lb .stage video{background:#000}
+.lb .meta{padding-top:4px}
+@media (max-width:640px){
+  .lb{padding:clamp(52px,8vh,70px) 14px 16px}
+  .lb .nav{width:40px;height:40px}
+  .lb .prev{left:6px}
+  .lb .next{right:6px}
+}
