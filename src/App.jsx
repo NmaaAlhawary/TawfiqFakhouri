@@ -92,8 +92,8 @@ export default function App() {
               <em> won awards at two robotics competitions</em>.
             </p>
             <div className="chips">
-              <span className="chip win"><b>🏆</b> Showmanship Award · Robofest 2026</span>
               <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
+              <span className="chip win"><b>🏆</b> Showmanship Award · Robofest 2026</span>
               <span className="chip"><b>70+</b> projects</span>
               <span className="chip"><b>4</b> certificates</span>
             </div>
@@ -145,7 +145,7 @@ export default function App() {
         <section className="sec" id="award">
           <p className="sec-label">Awards</p>
           <h2>Two competitions, two awards</h2>
-          <p className="say">Robofest Jordan 2026 and the Robot Football Olympics 2025.</p>
+          <p className="say">The Robot Football Olympics 2025 and Robofest Jordan 2026.</p>
 
           {AWARDS.map((a, i) => (
             <div className={'award has-photo' + (i === 0 ? ' lead' : '')} key={a.title}>

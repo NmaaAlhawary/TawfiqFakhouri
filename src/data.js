@@ -138,6 +138,15 @@ export const PROJECTS = [
 
 export const AWARDS = [
   {
+    kicker: '\ud83c\udfc6 Robot Football Olympics 2025',
+    title: 'Creative Solution Award',
+    text: 'Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for the '
+        + '<b>most creative solution</b> \u2014 judged on the strength of the idea itself.',
+    meta: ['AI LiveGuard', '5\u20136 December 2025', 'Hilton, Dead Sea'],
+    photo: 'img/team.jpg',
+    alt: 'Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built',
+  },
+  {
     kicker: '\ud83c\udfc6 Robofest Jordan 2026',
     title: 'Showmanship Award',
     text: 'Tawfiq won the <b>Showmanship Award at Robofest Jordan 2026</b>, run by Lawrence '
@@ -146,15 +155,6 @@ export const AWARDS = [
     meta: ['Robofest Jordan', '2026', 'Showmanship Award'],
     photo: 'img/robofest.jpg',
     alt: 'Tawfiq holding his Robofest trophy at the award ceremony',
-  },
-  {
-    kicker: '\ud83c\udfc6 Robot Football Olympics 2025',
-    title: 'Creative Solution Award',
-    text: 'Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for the '
-        + '<b>most creative solution</b> \u2014 judged on the strength of the idea itself.',
-    meta: ['AI LiveGuard', '5\u20136 December 2025', 'Hilton, Dead Sea'],
-    photo: 'img/team.jpg',
-    alt: 'Tawfiq and Zaid with their coach Nmaa Al Hawary and the robot they built',
   },
 ];
 
