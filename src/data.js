@@ -64,6 +64,11 @@ export const TOOLS = [
 
 export const PROJECTS = [
   {
+    src: 'img/vid-soldering.jpg', video: 'videos/soldering.mp4', cat: 'Hands-on',
+    title: 'Soldering',
+    note: 'Iron in hand, mask on — he makes the joint himself',
+  },
+  {
     src: 'img/vid-line-follower.jpg', video: 'videos/line-follower.mp4', cat: 'Robots',
     title: 'Line-following robot',
     note: 'SPIKE Prime — it reads the black line with a colour sensor and corrects itself',
@@ -111,11 +116,6 @@ export const PROJECTS = [
   {
     src: 'img/ai-face.jpg', fit: 'contain', cat: 'Code', title: 'AI face detection',
     note: 'PictoBlox — the camera finds a face and the box follows it',
-  },
-  {
-    src: 'img/vid-soldering.jpg', video: 'videos/soldering.mp4', cat: 'Hands-on',
-    title: 'Soldering',
-    note: 'Iron in hand, mask on — he makes the joint himself',
   },
   {
     src: 'img/drone-fpv.jpg', cat: 'Hands-on', title: 'FPV drone',
