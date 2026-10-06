@@ -102,6 +102,10 @@ export default function App() {
         <section className="sec" id="featured">
           <p className="sec-label">Featured project</p>
           <h2 className="fhead">AI LiveGuard</h2>
+          <p className="fintro">
+            Football injuries happen when tired players stay on the pitch. Tawfiq's answer: let the
+            coach <b>see the tiredness before the injury</b>.
+          </p>
 
           <div className="feature">
             <div className="fmedia">
@@ -115,11 +119,6 @@ export default function App() {
             </div>
 
             <div className="fcopy">
-              <p className="fintro">
-                Football injuries happen when tired players stay on the pitch. Tawfiq's answer: let
-                the coach <b>see the tiredness before the injury</b>.
-              </p>
-
               <ol className="how" ref={howRef}>
                 <li>
                   <b>A sensor vest</b>

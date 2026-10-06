@@ -512,4 +512,5 @@ h1.name::after{
 }
 
 /* featured heading sits above the video, full width */
-.fhead{margin-bottom:clamp(20px,2.6vw,34px)}
+.fhead{margin-bottom:12px}
+#featured > .fintro{max-width:60ch;margin:0 0 clamp(24px,3vw,40px)}
