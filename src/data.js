@@ -74,7 +74,7 @@ export const PROJECTS = [
     note: 'SPIKE Prime — his build, his code, running',
   },
   {
-    src: 'img/spike-arm.jpg', cat: 'Robots', title: 'Robotic arm',
+    src: 'img/spike-arm.jpg', fit: 'contain', cat: 'Robots', title: 'Robotic arm',
     note: 'SPIKE Prime — a gripper that opens and closes',
   },
   {

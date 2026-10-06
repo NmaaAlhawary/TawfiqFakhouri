@@ -201,8 +201,9 @@ export default function App() {
           <h2>What he is familiar with</h2>
           <p className="say">Eight areas, built up across more than seventy projects.</p>
           <div className="skills">
-            {TOOLS.map((t) => (
+            {TOOLS.map((t, i) => (
               <div className={'srow' + (t.star ? ' star' : '')} key={t.name}>
+                <span className="snum">{String(i + 1).padStart(2, '0')}</span>
                 <div className="sid">
                   <span className="tbadge"><ToolIcon name={t.icon} /></span>
                   <span className="sname">
@@ -210,9 +211,9 @@ export default function App() {
                     <i>{t.meta}</i>
                   </span>
                 </div>
-                <ul className="made">
-                  {t.items.map((x) => <li key={x}>{x}</li>)}
-                </ul>
+                <p className="sitems">
+                  {t.items.map((x) => <span key={x}>{x}</span>)}
+                </p>
               </div>
             ))}
           </div>

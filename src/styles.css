@@ -515,35 +515,86 @@ h1.name::after{
 .fhead{margin-bottom:12px}
 #featured > .fintro{max-width:60ch;margin:0 0 clamp(24px,3vw,40px)}
 
-/* ---------- skills: spec-sheet rows, not cards ---------- */
+/* ---------- skills: numbered index ---------- */
 .skills{border-top:1px solid var(--line)}
+
 .srow{
-  display:grid;gap:clamp(14px,2vw,40px);align-items:start;
-  grid-template-columns:1fr;
-  padding-block:clamp(18px,2.2vw,26px);
+  position:relative;
+  display:grid;gap:6px clamp(16px,2.4vw,44px);align-items:center;
+  grid-template-columns:auto 1fr;
+  grid-template-areas:"num id" ". items";
+  padding:clamp(20px,2.4vw,28px) 0 clamp(20px,2.4vw,28px) clamp(12px,1.6vw,22px);
   border-bottom:1px solid var(--line);
-  transition:background .25s ease;
+  transition:background .3s ease;
 }
-@media (min-width:860px){
-  .srow{grid-template-columns:minmax(260px,.9fr) minmax(0,1.6fr);align-items:center}
+@media (min-width:900px){
+  .srow{
+    grid-template-columns:auto minmax(250px,.8fr) minmax(0,1.5fr);
+    grid-template-areas:"num id items";
+    gap:clamp(20px,3vw,52px);
+  }
 }
-.srow:hover{background:rgba(255,255,255,.018)}
+/* hairline that lights up on hover */
+.srow::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--amber);transform:scaleY(0);transform-origin:50% 50%;
+  transition:transform .35s cubic-bezier(.2,.8,.3,1);
+}
+.srow:hover{background:rgba(255,255,255,.022)}
+.srow:hover::before{transform:scaleY(1)}
 
-.sid{display:flex;align-items:center;gap:16px;min-width:0}
-.sid .tbadge{margin:0;flex:none}
-.sname{display:flex;flex-direction:column;gap:3px;min-width:0}
-.sname b{font-family:"Archivo",sans-serif;font-weight:600;font-stretch:87%;
-  font-size:clamp(16px,1.8vw,20px);color:var(--text);letter-spacing:-.012em;line-height:1.2}
-.sname i{font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
-  letter-spacing:.1em;text-transform:uppercase;color:var(--text-faint)}
+.snum{
+  grid-area:num;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:500;
+  letter-spacing:.14em;color:var(--text-faint);
+  transition:color .25s ease;
+}
+.srow:hover .snum{color:var(--amber)}
 
-.skills .made{gap:8px}
-.skills .made li{font-size:12px;padding:7px 14px}
+.sid{grid-area:id;display:flex;align-items:center;gap:clamp(12px,1.4vw,18px);min-width:0}
+.sid .tbadge{margin:0;flex:none;width:44px;height:44px;border-radius:12px;
+  transition:color .25s ease,border-color .25s ease,background .25s ease}
+.srow:hover .tbadge{color:var(--text);border-color:#303b46;background:rgba(255,255,255,.055)}
+
+.sname{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sname b{
+  font-family:"Archivo",sans-serif;font-weight:600;font-stretch:87%;
+  font-size:clamp(17px,1.9vw,22px);line-height:1.15;letter-spacing:-.015em;
+  color:var(--text);transition:color .25s ease;
+}
+.sname i{
+  font-style:normal;font-family:"IBM Plex Mono",monospace;font-size:10px;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--text-faint);
+}
+
+/* items read as one line of facts, divided by thin rules */
+.sitems{
+  grid-area:items;margin:0;
+  display:flex;flex-wrap:wrap;align-items:center;
+  column-gap:0;row-gap:7px;
+}
+.sitems span{
+  position:relative;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.02em;
+  line-height:1.5;color:var(--text-soft);
+  padding:0 clamp(10px,1.1vw,16px);
+  transition:color .25s ease;
+}
+.sitems span:first-child{padding-left:0}
+.sitems span::after{
+  content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:1px;height:11px;background:var(--line);
+}
+.sitems span:last-child::after{display:none}
+.srow:hover .sitems span{color:var(--text)}
 
 /* the standout row */
-.srow.star{background:linear-gradient(90deg,rgba(255,122,47,.07),transparent 65%)}
+.srow.star{background:linear-gradient(90deg,rgba(255,122,47,.075),transparent 70%)}
+.srow.star::before{transform:scaleY(1)}
+.srow.star .snum,
 .srow.star .sname b{color:var(--amber)}
 .srow.star .sname i{color:var(--amber)}
 .srow.star .tbadge{color:var(--amber);border-color:var(--amber-dim);
-  background:rgba(255,122,47,.1)}
-.srow.star .made li{border-color:var(--amber-dim);color:var(--text)}
+  background:rgba(255,122,47,.12)}
+.srow.star .sitems span{color:var(--text)}
+.srow.star .sitems span::after{background:var(--amber-dim)}
