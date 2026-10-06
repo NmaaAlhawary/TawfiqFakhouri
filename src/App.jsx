@@ -25,6 +25,31 @@ function useReveal() {
   return ref;
 }
 
+const reduced = () =>
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Counts up from zero on load. Renders the final number straight away
+   when motion is reduced, so the figure is never wrong. */
+function Count({ to, suffix = '', duration = 1400, delay = 300 }) {
+  const [n, setN] = useState(() => (reduced() ? to : 0));
+
+  useEffect(() => {
+    if (reduced()) return;
+    let raf, start;
+    const step = (t) => {
+      if (!start) start = t;
+      const p = Math.min(1, (t - start) / duration);
+      setN(Math.round(to * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(step);
+    };
+    const timer = setTimeout(() => { raf = requestAnimationFrame(step); }, delay);
+    return () => { clearTimeout(timer); cancelAnimationFrame(raf); };
+  }, [to, duration, delay]);
+
+  return <span className="count">{n}{suffix}</span>;
+}
+
 /* Name reveals letter by letter on load. */
 function Name({ first, last }) {
   let i = 0;
@@ -97,8 +122,9 @@ export default function App() {
             <div className="chips">
               <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
               <span className="chip win"><b>🏆</b> Showmanship Award · Robofest 2026</span>
-              <span className="chip"><b>70+</b> projects</span>
-              <span className="chip"><b>4</b> certificates</span>
+              <span className="chip"><b><Count to={70} suffix="+" /></b> projects</span>
+              <span className="chip"><b><Count to={2} delay={420} /></b> awards</span>
+              <span className="chip"><b><Count to={4} delay={540} /></b> certificates</span>
             </div>
           </div>
         </header>

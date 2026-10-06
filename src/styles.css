@@ -608,3 +608,6 @@ h1.name::after{
   background:linear-gradient(145deg,rgba(255,122,47,.055),var(--panel) 60%);
 }
 #award .award:not(.lead)::after{opacity:.45}
+
+/* counting numbers keep a steady width while they tick */
+.count{font-variant-numeric:tabular-nums;display:inline-block;min-width:1.1em;text-align:right}
