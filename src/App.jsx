@@ -120,7 +120,7 @@ export default function App() {
             <p className="lede">
               Tawfiq is a brilliant ten-year-old. He builds robots that drive themselves, writes his
               own games, solders his own circuits and flies FPV drones, and he has the award-winning
-              habit of <em>seeing a problem and building the thing that solves it</em>.
+              skill of <em>seeing a problem and building the thing that solves it</em>.
             </p>
             <div className="chips">
               <div className="chips-awards">
