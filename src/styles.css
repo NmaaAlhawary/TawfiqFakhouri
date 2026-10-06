@@ -697,7 +697,7 @@ h1.name::after{
 
 /* hero chips: awards stacked, counts in a row beneath */
 .chips{flex-direction:column;align-items:flex-start;gap:clamp(11px,1.4vw,16px)}
-.chips-awards{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.chips-awards{display:flex;flex-wrap:wrap;align-items:center;gap:9px}
 .chips-counts{display:flex;flex-wrap:wrap;gap:9px}
 
 /* counters get the same treatment as the award badges */
