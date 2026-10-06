@@ -420,3 +420,11 @@
 .fcopy h2{margin-bottom:18px}
 .fcaption{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
   text-transform:uppercase;color:var(--text-faint);margin:0}
+
+/* award meta line: colour-coded project / date / place */
+.award .wm{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.award .wm b,.award .wm i,.award .wm em{font-style:normal;font-weight:500;
+  border-radius:999px;padding:5px 12px;border:1px solid transparent;letter-spacing:.04em}
+.award .wm b{color:var(--amber);background:rgba(255,122,47,.12);border-color:var(--amber-dim);font-weight:600}
+.award .wm i{color:var(--text-soft);background:rgba(255,255,255,.04);border-color:var(--line)}
+.award .wm em{color:var(--led);background:rgba(47,224,192,.09);border-color:rgba(47,224,192,.28)}

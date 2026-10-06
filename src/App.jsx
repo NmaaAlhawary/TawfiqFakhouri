@@ -139,7 +139,11 @@ export default function App() {
                 Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for
                 the <b>most creative solution</b> — judged on the strength of the idea itself.
               </p>
-              <p className="wm">AI LiveGuard · 5–6 December 2025 · Hilton, Dead Sea</p>
+              <p className="wm">
+                <b>AI LiveGuard</b>
+                <i>5–6 December 2025</i>
+                <em>Hilton, Dead Sea</em>
+              </p>
             </div>
           </div>
         </section>
