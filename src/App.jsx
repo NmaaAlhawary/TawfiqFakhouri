@@ -91,11 +91,10 @@ export default function App() {
               </span>
             </a>
               <div className="shots">
-                <img src="img/app-1.jpg" alt="AI LiveGuard sign-in screen" loading="lazy" />
                 <img src="img/app-2.jpg" alt="AI LiveGuard active players screen with fatigue levels" loading="lazy" />
                 <img src="img/app-3.jpg" alt="AI LiveGuard pitch view" loading="lazy" />
               </div>
-              <p className="fnote">Three of the screens he designed and built in Adalo.</p>
+              <p className="fnote">Two of the screens he designed and built in Adalo.</p>
             </div>
 
             <div className="fcopy">
