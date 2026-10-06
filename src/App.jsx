@@ -123,11 +123,15 @@ export default function App() {
               habit of <em>seeing a problem and building the thing that solves it</em>.
             </p>
             <div className="chips">
-              <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
-              <span className="chip win"><b>🏆</b> Showmanship Award · Robofest 2026</span>
-              <span className="chip"><b><Count to={70} suffix="+" /></b> projects</span>
-              <span className="chip"><b><Count to={2} delay={420} /></b> awards</span>
-              <span className="chip"><b><Count to={4} delay={540} /></b> certificates</span>
+              <div className="chips-awards">
+                <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
+                <span className="chip win"><b>🏆</b> Showmanship Award · Robofest 2026</span>
+              </div>
+              <div className="chips-counts">
+                <span className="chip"><b><Count to={70} suffix="+" /></b> projects</span>
+                <span className="chip"><b><Count to={2} delay={420} /></b> awards</span>
+                <span className="chip"><b><Count to={4} delay={540} /></b> certificates</span>
+              </div>
             </div>
           </div>
         </header>

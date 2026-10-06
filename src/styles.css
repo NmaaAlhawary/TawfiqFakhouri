@@ -694,3 +694,8 @@ h1.name::after{
 .skills.in .srow:nth-child(7){transition-delay:.38s}
 .skills.in .srow:nth-child(8){transition-delay:.44s}
 @media (prefers-reduced-motion:reduce){ .skills.pre .srow{opacity:1;transform:none} }
+
+/* hero chips: awards stacked, counts in a row beneath */
+.chips{flex-direction:column;align-items:flex-start;gap:clamp(11px,1.4vw,16px)}
+.chips-awards{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
+.chips-counts{display:flex;flex-wrap:wrap;gap:9px}
