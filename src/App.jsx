@@ -79,6 +79,7 @@ export default function App() {
           <p className="say">He invented it, designed it, built the app, and presented it himself.</p>
 
           <div className="feature">
+            <div className="fmedia">
             <a className="video" href="https://youtu.be/PFmzdAx26yI" target="_blank" rel="noopener">
               <img
                 src="img/video-poster.jpg"
@@ -88,12 +89,14 @@ export default function App() {
               <span className="play">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
               </span>
-              <span className="cap">
-                <span className="kicker">Watch him present it · 2 minutes</span>
-                <p className="vt">AI LiveGuard System</p>
-                <p className="vm">Tawfiq Fakhouri &amp; Zaid Diken · opens on YouTube</p>
-              </span>
             </a>
+              <div className="shots">
+                <img src="img/app-1.jpg" alt="AI LiveGuard sign-in screen" loading="lazy" />
+                <img src="img/app-2.jpg" alt="AI LiveGuard active players screen with fatigue levels" loading="lazy" />
+                <img src="img/app-3.jpg" alt="AI LiveGuard pitch view" loading="lazy" />
+              </div>
+              <p className="fnote">Three of the screens he designed and built in Adalo.</p>
+            </div>
 
             <div className="fcopy">
               <p className="fintro">
@@ -116,16 +119,9 @@ export default function App() {
                 </li>
               </ol>
 
-              <div className="shots">
-                <img src="img/app-1.jpg" alt="AI LiveGuard app home screen" loading="lazy" />
-                <img src="img/app-2.jpg" alt="AI LiveGuard active players screen" loading="lazy" />
-                <img src="img/app-3.jpg" alt="AI LiveGuard substitutes screen" loading="lazy" />
-              </div>
-
               <a href="https://nmaas-team-1.adalo.com/ai" target="_blank" rel="noopener" className="btn">
                 Open the app ↗
               </a>
-              <p className="fnote">He found the problem, designed the solution and built every screen in Adalo.</p>
             </div>
           </div>
         </section>
