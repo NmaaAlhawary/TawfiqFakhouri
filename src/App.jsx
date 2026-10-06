@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
-import { SECTIONS, TOOLS, PROJECTS, CERTS, AWARDS } from './data.js';
+import { SECTIONS, PROJECTS, CERTS, AWARDS } from './data.js';
 import Gallery from './components/Gallery.jsx';
-import ToolIcon from './components/ToolIcon.jsx';
 
 /* Steps are visible by default; the animation only engages once JS runs,
    so nothing is ever stuck hidden. */
@@ -70,7 +69,6 @@ export default function App() {
   const howRef = useReveal();
   const certsRef = useReveal();
   const awardsRef = useReveal();
-  const skillsRef = useReveal();
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
@@ -225,27 +223,6 @@ export default function App() {
             {CERTS.map((c) => (
               <div className="certcard" key={c.src}>
                 <img src={c.src} alt={c.title} loading="lazy" draggable="false" />
-              </div>
-            ))}
-          </div>
-        </section>
-        <section className="sec" id="tools">
-          <p className="sec-label">Skills</p>
-          <p className="say">Eight areas, built up across more than seventy projects.</p>
-          <div className="skills" ref={skillsRef}>
-            {TOOLS.map((t, i) => (
-              <div className={'srow' + (t.star ? ' star' : '')} key={t.name}>
-                <span className="snum">{String(i + 1).padStart(2, '0')}</span>
-                <div className="sid">
-                  <span className="tbadge"><ToolIcon name={t.icon} /></span>
-                  <span className="sname">
-                    <b>{t.name}</b>
-                    <i>{t.meta}</i>
-                  </span>
-                </div>
-                <p className="sitems">
-                  {t.items.map((x) => <span key={x}>{x}</span>)}
-                </p>
               </div>
             ))}
           </div>

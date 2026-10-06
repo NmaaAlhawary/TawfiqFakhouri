@@ -7,62 +7,6 @@ export const SECTIONS = [
   { id: 'award',    label: 'Awards' },
   { id: 'projects', label: 'His projects' },
   { id: 'certs',    label: 'Certificates' },
-  { id: 'tools',    label: 'What he knows' },
-];
-
-export const TOOLS = [
-  {
-    name: 'Block coding',
-    icon: 'blocks',
-    size: 'tall',
-    meta: 'Scratch · PictoBlox · SPIKE · mBot2 · micro:bit',
-    items: ['Variables', 'Loops', 'If / else', 'Events', 'Broadcasts', 'Own game logic'],
-  },
-  {
-    name: 'Robot design & building',
-    icon: 'brick',
-    size: 'big',
-    meta: 'His strongest area',
-    items: ['Gears & motors', 'Drivetrains', 'Grippers', 'Chassis design', 'Builds without instructions'],
-  },
-  {
-    name: 'Sensors',
-    icon: 'sensor',
-    meta: 'Reading the world',
-    items: ['Colour / line', 'Ultrasonic', 'Touch', 'Gyro', 'Camera input'],
-  },
-  {
-    name: 'Electronics & soldering',
-    icon: 'chip',
-    meta: 'Hands and wires',
-    items: ['Real circuits', 'Soldering', 'Makey Makey', 'Buzzer & switch builds'],
-  },
-  {
-    name: 'AI projects',
-    icon: 'ai',
-    meta: 'Applied, not just demoed',
-    items: ['Face detection', 'Body tracking', 'Hand-controlled games', 'Code.org AI courses'],
-  },
-  {
-    name: 'Drones & FPV',
-    icon: 'drone',
-    meta: 'Simulator first, then real flight',
-    items: ['Drone parts', 'Throttle, yaw, pitch, roll', 'Flight safety', 'Real FPV flying'],
-  },
-  {
-    name: 'App design',
-    icon: 'app',
-    meta: 'Adalo · no-code',
-    items: ['Screen layout', 'Navigation', 'Simple data', 'Built AI LiveGuard'],
-  },
-  {
-    name: 'Problem solving',
-    icon: 'idea',
-    star: true,
-    size: 'wide',
-    meta: 'Where every project starts',
-    items: ['Spots a real problem', 'Invents the solution', 'Defends the design', 'Award-winning idea'],
-  },
 ];
 
 export const PROJECTS = [
