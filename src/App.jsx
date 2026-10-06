@@ -70,6 +70,7 @@ function Name({ first, last }) {
 export default function App() {
   const howRef = useReveal();
   const certsRef = useReveal();
+  const awardsRef = useReveal();
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
@@ -177,6 +178,7 @@ export default function App() {
           <h2>Two competitions, two awards</h2>
           <p className="say">The Robot Football Olympics 2025 and Robofest Jordan 2026.</p>
 
+          <div className="awards" ref={awardsRef}>
           {AWARDS.map((a, i) => (
             <div className={'award has-photo' + (i === 0 ? ' lead' : '')} key={a.title}>
               <div className="awardshot">
@@ -194,6 +196,7 @@ export default function App() {
               </div>
             </div>
           ))}
+          </div>
         </section>
 
         <section className="sec" id="projects">
