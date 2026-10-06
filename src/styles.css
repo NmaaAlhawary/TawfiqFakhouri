@@ -708,3 +708,9 @@ h1.name::after{
   box-shadow:0 0 26px -6px rgba(255,122,47,.55);
 }
 .chips-counts .chip b{color:var(--amber);font-weight:600}
+
+/* award panels sit centred on wide screens instead of stretching edge to edge */
+#award .award{max-width:1320px;margin-inline:auto}
+@media (min-width:900px){
+  .award.has-photo{grid-template-columns:minmax(300px,0.95fr) minmax(0,1.05fr);align-items:center}
+}
