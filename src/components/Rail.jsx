@@ -5,7 +5,7 @@ export default function Rail({active}){
     <aside className="rail">
       <div>
         <p className="who">Tawfiq<br/>Fakhouri</p>
-        <p className="whos">Skills report · Oct 2026</p>
+        <p className="whos">Portfolio · 2024—2026</p>
       </div>
       <nav>
         {SECTIONS.map(s=>(
