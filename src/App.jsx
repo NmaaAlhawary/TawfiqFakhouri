@@ -111,15 +111,6 @@ export default function App() {
 
         <header className="hero" id="top">
           <span className="glow" /><span className="grid" />
-          <video
-            className="heroclip"
-            src="videos/line-follower.mp4"
-            poster="img/vid-line-follower.jpg"
-            autoPlay muted loop playsInline
-            preload="metadata"
-            disablePictureInPicture
-            aria-label="A robot Tawfiq built following a line, running his own code"
-          />
           <div className="inner">
             <p className="eyebrow">Portfolio · 2024–2026</p>
             <Name first="Tawfiq" last="Fakhouri" />
