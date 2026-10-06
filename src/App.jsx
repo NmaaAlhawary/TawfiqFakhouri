@@ -71,7 +71,10 @@ export default function App() {
 
   const cats = ['All', 'Robots', 'Code', 'Hands-on'];
   const count = (c) => (c === 'All' ? PROJECTS.length : PROJECTS.filter((p) => p.cat === c).length);
-  const shown = filter === 'All' ? PROJECTS : PROJECTS.filter((p) => p.cat === filter);
+  /* Videos lead the grid so the moving cards are what you see first;
+     everything else keeps its order from data.js. */
+  const ordered = [...PROJECTS].sort((a, b) => (b.video ? 1 : 0) - (a.video ? 1 : 0));
+  const shown = filter === 'All' ? ordered : ordered.filter((p) => p.cat === filter);
 
   return (
     <Fragment>
