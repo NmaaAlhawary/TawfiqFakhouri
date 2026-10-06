@@ -100,6 +100,9 @@ export default function App() {
         </header>
 
         <section className="sec" id="featured">
+          <p className="sec-label">Featured project</p>
+          <h2 className="fhead">AI LiveGuard</h2>
+
           <div className="feature">
             <div className="fmedia">
               <a className="video" href="https://youtu.be/PFmzdAx26yI?t=30" target="_blank" rel="noopener">
@@ -112,8 +115,6 @@ export default function App() {
             </div>
 
             <div className="fcopy">
-              <p className="sec-label">Featured project</p>
-              <h2>AI LiveGuard</h2>
               <p className="fintro">
                 Football injuries happen when tired players stay on the pitch. Tawfiq's answer: let
                 the coach <b>see the tiredness before the injury</b>.

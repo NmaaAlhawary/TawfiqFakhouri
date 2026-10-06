@@ -510,3 +510,6 @@ h1.name::after{
   h1.name .line > span{animation:none}
   h1.name::after{animation:none;opacity:0}
 }
+
+/* featured heading sits above the video, full width */
+.fhead{margin-bottom:clamp(20px,2.6vw,34px)}
