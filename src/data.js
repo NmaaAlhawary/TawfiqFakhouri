@@ -37,7 +37,11 @@ export const KITS = [
 ];
 
 export const PROJECTS = [
-  {src:'img/spike-pushup.jpg', cat:'Robots', title:'Push-up robot',
+  {src:'img/vid-pushup-robot.jpg', video:'videos/pushup-robot.mp4', cat:'Robots',
+   title:'Push-up robot', note:'SPIKE Prime — his build, his code, running'},
+  {src:'img/vid-line-follower.jpg', video:'videos/line-follower.mp4', cat:'Robots',
+   title:'Line-following robot', note:'SPIKE Prime — it reads the black line with a colour sensor'},
+  {src:'img/spike-pushup.jpg', cat:'Robots', title:'Push-up robot (built)',
    note:'SPIKE Prime — two motors, programmed by him'},
   {src:'img/spike-arm.jpg', cat:'Robots', title:'Robotic arm',
    note:'SPIKE Prime — a gripper that opens and closes'},
@@ -54,14 +58,21 @@ export const PROJECTS = [
   {src:'img/app-1.jpg', cat:'Code', title:'AI LiveGuard app',
    note:'His own app idea — built in Adalo. Tap to open the real app.',
    link:'https://nmaas-team-1.adalo.com/ai'},
-  {src:'img/soldering.jpg', cat:'Hands-on', title:'Soldering',
-   note:'He solders his own wire connections, safely'},
+  {src:'img/vid-soldering.jpg', video:'videos/soldering.mp4', cat:'Hands-on',
+   title:'Soldering', note:'Iron in hand, mask on — he makes the joint himself'},
   {src:'img/drone-fpv.jpg', cat:'Hands-on', title:'FPV drone',
    note:'Simulator practice, then real flying — and he knows the parts'},
   {src:'img/buzzer-wire.jpg', cat:'Hands-on', title:'Buzzer wire game',
    note:'He bent the wire and built the circuit himself'},
   {src:'img/rubiks.jpg', cat:'Hands-on', title:"Rubik's cube",
    note:'Two layers solved — a real method, not guessing'},
+];
+
+export const AWARD_PHOTOS = [
+  {src:'img/award-stage.jpg', title:'Lifting the cup on stage',
+   note:'Robot Football Olympics 2025 · Dead Sea'},
+  {src:'img/award-ceremony.jpg', title:'Tawfiq and Zaid with the trophy',
+   note:'Creative Solution Award · 5–6 December 2025'},
 ];
 
 export const CERTS = [

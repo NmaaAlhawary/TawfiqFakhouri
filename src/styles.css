@@ -305,3 +305,31 @@
   button{font-family:inherit}
   a{color:var(--amber)}
   :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+/* ---------- video badge on project cards ---------- */
+.card .vbadge{
+  position:absolute;bottom:10px;left:10px;display:inline-flex;align-items:center;gap:6px;
+  font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:#06070a;font-weight:600;background:var(--led);padding:5px 10px 5px 8px;border-radius:999px;
+  box-shadow:0 0 22px rgba(47,224,192,.5);
+}
+.card .vbadge svg{width:9px;fill:#06070a}
+.lb video{max-width:100%;max-height:100%;border-radius:10px;background:#000;
+  box-shadow:0 30px 90px -30px rgba(0,0,0,.9)}
+
+/* ---------- award photos ---------- */
+.award.has-photo{grid-template-columns:1fr}
+@media (min-width:900px){
+  .award.has-photo{grid-template-columns:minmax(320px,.85fr) 1.15fr;align-items:center}
+}
+.awardshot{padding:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  background:var(--panel);cursor:zoom-in;display:block;position:relative;z-index:1;
+  transition:border-color .25s,transform .25s}
+.awardshot:hover{border-color:var(--amber);transform:translateY(-3px)}
+.awardshot img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover;max-width:100%}
+.awardmore{display:inline-flex;align-items:center;gap:12px;margin-top:20px;padding:8px 18px 8px 8px;
+  background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:999px;
+  cursor:pointer;color:var(--text-soft);position:relative;z-index:1;transition:border-color .25s,color .25s}
+.awardmore:hover{border-color:var(--amber);color:var(--text)}
+.awardmore img{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none}
+.awardmore span{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}

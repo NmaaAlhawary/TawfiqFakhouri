@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, Fragment } from 'react';
-import { SECTIONS, KITS, PROJECTS, CERTS, PATH, OUTCOMES } from './data.js';
+import { SECTIONS, KITS, PROJECTS, CERTS, PATH, OUTCOMES, AWARD_PHOTOS } from './data.js';
 import Rail from './components/Rail.jsx';
 import Levels from './components/Levels.jsx';
 import Gallery from './components/Gallery.jsx';
@@ -134,7 +134,11 @@ export default function App(){
           <h2>He didn't just take part — he won</h2>
           <p className="say">Robot Football Olympics 2025 · Dead Sea, Jordan</p>
 
-          <div className="award">
+          <div className="award has-photo">
+            <button className="awardshot" onClick={()=>open(AWARD_PHOTOS,0)}
+                    aria-label="Enlarge: lifting the cup on stage">
+              <img src="img/award-stage.jpg" alt="Tawfiq lifting the trophy on stage with his teammate and coach"/>
+            </button>
             <div>
               <p className="wk">🏆 Robot Football Olympics 2025 · Robotna</p>
               <p className="wt">Creative Solution<br/>Award</p>
@@ -143,6 +147,10 @@ export default function App(){
                 just on how fast the robot ran. That is the award that matches exactly what he is
                 best at: looking at a problem and inventing something to solve it.</p>
               <p className="wm">AI LiveGuard · Tawfiq Fakhouri &amp; Zaid Diken · 5–6 December 2025</p>
+              <button className="awardmore" onClick={()=>open(AWARD_PHOTOS,1)}>
+                <img src="img/award-ceremony.jpg" alt="Tawfiq and Zaid holding the trophy"/>
+                <span>See both photos →</span>
+              </button>
             </div>
           </div>
 
