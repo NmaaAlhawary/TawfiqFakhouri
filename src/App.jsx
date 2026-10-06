@@ -231,7 +231,6 @@ export default function App() {
         </section>
         <section className="sec" id="tools">
           <p className="sec-label">Skills</p>
-          <h2>What he is familiar with</h2>
           <p className="say">Eight areas, built up across more than seventy projects.</p>
           <div className="skills" ref={skillsRef}>
             {TOOLS.map((t, i) => (
