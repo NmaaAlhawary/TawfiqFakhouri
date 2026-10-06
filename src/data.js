@@ -14,12 +14,14 @@ export const TOOLS = [
   {
     name: 'Block coding',
     icon: 'blocks',
+    size: 'tall',
     meta: 'Scratch · PictoBlox · SPIKE · mBot2 · micro:bit',
     items: ['Variables', 'Loops', 'If / else', 'Events', 'Broadcasts', 'Own game logic'],
   },
   {
     name: 'Robot design & building',
     icon: 'brick',
+    size: 'big',
     meta: 'His strongest area',
     items: ['Gears & motors', 'Drivetrains', 'Grippers', 'Chassis design', 'Builds without instructions'],
   },
@@ -57,6 +59,7 @@ export const TOOLS = [
     name: 'Problem solving',
     icon: 'idea',
     star: true,
+    size: 'wide',
     meta: 'Where every project starts',
     items: ['Spots a real problem', 'Invents the solution', 'Defends the design', 'Award-winning idea'],
   },

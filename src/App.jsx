@@ -71,6 +71,7 @@ export default function App() {
   const howRef = useReveal();
   const certsRef = useReveal();
   const awardsRef = useReveal();
+  const skillsRef = useReveal();
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
@@ -230,20 +231,17 @@ export default function App() {
           <p className="sec-label">Skills</p>
           <h2>What he is familiar with</h2>
           <p className="say">Eight areas, built up across more than seventy projects.</p>
-          <div className="skills">
-            {TOOLS.map((t, i) => (
-              <div className={'srow' + (t.star ? ' star' : '')} key={t.name}>
-                <span className="snum">{String(i + 1).padStart(2, '0')}</span>
-                <div className="sid">
-                  <span className="tbadge"><ToolIcon name={t.icon} /></span>
-                  <span className="sname">
-                    <b>{t.name}</b>
-                    <i>{t.meta}</i>
-                  </span>
+          <div className="bento" ref={skillsRef}>
+            {TOOLS.map((t) => (
+              <div className={['tile', t.size || '', t.star ? 'star' : ''].join(' ').trim()} key={t.name}>
+                <span className="tbadge"><ToolIcon name={t.icon} /></span>
+                <div className="tcopy">
+                  <b>{t.name}</b>
+                  <i>{t.meta}</i>
                 </div>
-                <p className="sitems">
-                  {t.items.map((x) => <span key={x}>{x}</span>)}
-                </p>
+                <ul className="tlist">
+                  {t.items.map((x) => <li key={x}>{x}</li>)}
+                </ul>
               </div>
             ))}
           </div>
