@@ -74,25 +74,21 @@ export default function App() {
         </header>
 
         <section className="sec" id="featured">
-          <p className="sec-label">Featured project</p>
-          <h2>AI LiveGuard</h2>
-          <p className="say">He invented it, designed it, built the app, and presented it himself.</p>
-
           <div className="feature">
             <div className="fmedia">
-            <a className="video" href="https://youtu.be/PFmzdAx26yI?t=30" target="_blank" rel="noopener">
-              <img
-                src="img/video-poster.jpg"
-                alt="Tawfiq presenting the AI LiveGuard system to camera"
-              />
-              <span className="shade" />
-              <span className="play">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
-              </span>
-            </a>
+              <a className="video" href="https://youtu.be/PFmzdAx26yI?t=30" target="_blank" rel="noopener">
+                <img src="img/video-poster.jpg" alt="Tawfiq presenting the AI LiveGuard system to camera" />
+                <span className="shade" />
+                <span className="play">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
+                </span>
+              </a>
+              <p className="fcaption">Tawfiq presenting AI LiveGuard · 2 minutes</p>
             </div>
 
             <div className="fcopy">
+              <p className="sec-label">Featured project</p>
+              <h2>AI LiveGuard</h2>
               <p className="fintro">
                 Football injuries happen when tired players stay on the pitch. Tawfiq's answer: let
                 the coach <b>see the tiredness before the injury</b>.
@@ -141,8 +137,7 @@ export default function App() {
               <p className="wt">Most creative<br />solution</p>
               <p className="wd">
                 Teams came from eleven countries. Tawfiq and his teammate Zaid took the award for
-                the <b>most creative solution</b> — judged on the strength of the idea, not just on
-                how fast the robot ran.
+                the <b>most creative solution</b> — judged on the strength of the idea itself.
               </p>
               <p className="wm">AI LiveGuard · 5–6 December 2025 · Hilton, Dead Sea</p>
             </div>

@@ -331,7 +331,7 @@
 /* ---------- featured project: video beside the story ---------- */
 .feature{display:grid;gap:clamp(20px,2.6vw,38px);align-items:start;grid-template-columns:1fr}
 @media (min-width:1040px){
-  .feature{grid-template-columns:minmax(0,1.75fr) minmax(290px,0.85fr);align-items:center}
+  .feature{grid-template-columns:minmax(0,1.6fr) minmax(320px,1fr);align-items:center;gap:clamp(28px,4vw,64px)}
 }
 .feature .video{max-width:none}
 .fcopy{display:flex;flex-direction:column;gap:22px}
@@ -413,3 +413,10 @@
 /* ---------- wide screenshots: show the whole thing, don't crop ---------- */
 .card img.contain{object-fit:contain;background:#eef1f4}
 .card:hover img.contain{transform:none}
+
+/* featured: heading lives inside the copy column, so nothing floats alone */
+#featured{padding-block:clamp(44px,5.5vw,76px)}
+.fcopy .sec-label{margin-bottom:10px}
+.fcopy h2{margin-bottom:18px}
+.fcaption{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--text-faint);margin:0}
