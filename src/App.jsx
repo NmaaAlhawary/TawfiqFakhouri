@@ -215,25 +215,6 @@ export default function App() {
         </section>
 
 
-        <section className="sec" id="tools">
-          <p className="sec-label">Skills</p>
-          <h2>What he is familiar with</h2>
-          <p className="say">Eight areas, built up across more than seventy projects.</p>
-          <div className="bento" ref={skillsRef}>
-            {TOOLS.map((t) => (
-              <div className={['tile', t.size || '', t.star ? 'star' : ''].join(' ').trim()} key={t.name}>
-                <span className="tbadge"><ToolIcon name={t.icon} /></span>
-                <div className="tcopy">
-                  <b>{t.name}</b>
-                  <i>{t.meta}</i>
-                </div>
-                <ul className="tlist">
-                  {t.items.map((x) => <li key={x}>{x}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
         <section className="sec" id="certs">
           <p className="sec-label">Certificates</p>
           <h2>Where he has competed and trained</h2>
@@ -242,6 +223,28 @@ export default function App() {
             {CERTS.map((c) => (
               <div className="certcard" key={c.src}>
                 <img src={c.src} alt={c.title} loading="lazy" draggable="false" />
+              </div>
+            ))}
+          </div>
+        </section>
+        <section className="sec" id="tools">
+          <p className="sec-label">Skills</p>
+          <h2>What he is familiar with</h2>
+          <p className="say">Eight areas, built up across more than seventy projects.</p>
+          <div className="skills" ref={skillsRef}>
+            {TOOLS.map((t, i) => (
+              <div className={'srow' + (t.star ? ' star' : '')} key={t.name}>
+                <span className="snum">{String(i + 1).padStart(2, '0')}</span>
+                <div className="sid">
+                  <span className="tbadge"><ToolIcon name={t.icon} /></span>
+                  <span className="sname">
+                    <b>{t.name}</b>
+                    <i>{t.meta}</i>
+                  </span>
+                </div>
+                <p className="sitems">
+                  {t.items.map((x) => <span key={x}>{x}</span>)}
+                </p>
               </div>
             ))}
           </div>
