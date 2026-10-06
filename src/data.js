@@ -145,8 +145,7 @@ export const AWARDS = [
     kicker: '\ud83c\udfc6 Robofest Jordan 2026',
     title: 'Showmanship Award',
     text: 'Tawfiq won the <b>Showmanship Award at Robofest Jordan 2026</b>, run by Lawrence '
-        + 'Technological University. It goes to the team that presents and demonstrates its robot '
-        + 'best \u2014 not just the one that scores fastest. He designed, built and programmed it himself.',
+        + 'Technological University. It goes to the team that presents and demonstrates its robot best.',
     meta: ['Robofest Jordan', '2026', 'Showmanship Award'],
     photo: 'img/robofest.jpg',
     alt: 'Tawfiq holding his Robofest trophy at the award ceremony',
