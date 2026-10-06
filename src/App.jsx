@@ -69,6 +69,7 @@ function Name({ first, last }) {
 
 export default function App() {
   const howRef = useReveal();
+  const certsRef = useReveal();
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
@@ -214,7 +215,7 @@ export default function App() {
           <p className="sec-label">Certificates</p>
           <h2>Where he has competed and trained</h2>
           
-          <div className="certs">
+          <div className="certs" ref={certsRef}>
             {CERTS.map((c) => (
               <div className="certcard" key={c.src}>
                 <img src={c.src} alt={c.title} loading="lazy" draggable="false" />

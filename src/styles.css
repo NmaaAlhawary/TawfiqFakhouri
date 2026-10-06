@@ -611,3 +611,29 @@ h1.name::after{
 
 /* counting numbers keep a steady width while they tick */
 .count{font-variant-numeric:tabular-nums;display:inline-block;min-width:1.1em;text-align:right}
+
+/* ---------- certificates: reveal on scroll + hover lift ---------- */
+.certs.pre .certcard{opacity:0;transform:translateY(26px) scale(.975)}
+.certs.in .certcard{
+  opacity:1;transform:none;
+  transition:opacity .7s cubic-bezier(.2,.8,.3,1),
+             transform .7s cubic-bezier(.2,.8,.3,1),
+             border-color .3s ease,box-shadow .3s ease;
+}
+.certs.in .certcard:nth-child(1){transition-delay:.02s}
+.certs.in .certcard:nth-child(2){transition-delay:.13s}
+.certs.in .certcard:nth-child(3){transition-delay:.24s}
+.certs.in .certcard:nth-child(4){transition-delay:.35s}
+
+.certcard{box-shadow:0 10px 30px -22px rgba(0,0,0,.9)}
+.certcard:hover{
+  transform:translateY(-6px);
+  border-color:var(--amber);
+  box-shadow:0 26px 60px -26px rgba(255,122,47,.45),
+             0 0 0 1px rgba(255,122,47,.25);
+}
+
+@media (prefers-reduced-motion:reduce){
+  .certs.pre .certcard{opacity:1;transform:none}
+  .certcard:hover{transform:none}
+}
