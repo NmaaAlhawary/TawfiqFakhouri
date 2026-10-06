@@ -138,13 +138,14 @@ export const PROJECTS = [
 
 export const AWARDS = [
   {
-    kicker: '\ud83e\udd47 Robofest 2026',
-    title: 'First place',
-    text: 'Tawfiq took <b>first place at Robofest 2026</b> \u2014 his second competition win, and the '
-        + 'first one on the podium. He designed, built and programmed the robot himself.',
-    meta: ['Robofest', '2026', '1st place'],
+    kicker: '\ud83c\udfc6 Robofest Jordan 2026',
+    title: 'Showmanship Award',
+    text: 'Tawfiq won the <b>Showmanship Award at Robofest Jordan 2026</b>, run by Lawrence '
+        + 'Technological University. It goes to the team that presents and demonstrates its robot '
+        + 'best \u2014 not just the one that scores fastest. He designed, built and programmed it himself.',
+    meta: ['Robofest Jordan', '2026', 'Showmanship Award'],
     photo: 'img/robofest.jpg',
-    alt: 'Tawfiq holding the Robofest first-place trophy on stage',
+    alt: 'Tawfiq holding his Robofest trophy at the award ceremony',
   },
   {
     kicker: '\ud83c\udfc6 Robot Football Olympics 2025',
