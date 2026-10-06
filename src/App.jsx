@@ -118,9 +118,9 @@ export default function App() {
             <Name first="Tawfiq" last="Fakhouri" />
             <p className="sub">Ten years old · <b>He finds the problem, then builds the answer</b></p>
             <p className="lede">
-              Tawfiq is ten. He builds robots that drive themselves, writes his own games, solders
-              his own circuits and flies FPV drones. And when something bothers him,
-              <em> his first instinct is to build the thing that fixes it</em>.
+              Tawfiq is a brilliant ten-year-old. He builds robots that drive themselves, writes his
+              own games, solders his own circuits and flies FPV drones — and he has the award-winning
+              habit of <em>seeing a problem and building the thing that solves it</em>.
             </p>
             <div className="chips">
               <span className="chip win"><b>🏆</b> Creative Solution Award · RFO 2025</span>
