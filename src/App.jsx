@@ -114,12 +114,12 @@ export default function App() {
         <header className="hero" id="top">
           <span className="glow" /><span className="grid" />
           <div className="inner">
-            <p className="eyebrow">Portfolio · 2024 — 2026</p>
+            <p className="eyebrow">Portfolio · 2024–2026</p>
             <Name first="Tawfiq" last="Fakhouri" />
             <p className="sub">Ten years old · <b>He finds the problem, then builds the answer</b></p>
             <p className="lede">
               Tawfiq is a brilliant ten-year-old. He builds robots that drive themselves, writes his
-              own games, solders his own circuits and flies FPV drones — and he has the award-winning
+              own games, solders his own circuits and flies FPV drones, and he has the award-winning
               habit of <em>seeing a problem and building the thing that solves it</em>.
             </p>
             <div className="chips">
@@ -253,7 +253,7 @@ export default function App() {
 
         <footer>
           <span>Tawfiq Fakhouri · Portfolio</span>
-          <span>Built with Nmaa Al Hawary · 2024 — 2026</span>
+          <span>Built with Nmaa Al Hawary · 2024–2026</span>
         </footer>
       </div>
 
