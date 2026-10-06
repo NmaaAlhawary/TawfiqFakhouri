@@ -459,3 +459,54 @@
   transition:border-color .25s,transform .25s}
 .certcard:hover{border-color:var(--amber-dim);transform:translateY(-3px)}
 .certcard img{width:100%;display:block;max-width:100%}
+
+/* ---------- steps: reveal on scroll + hover ---------- */
+.how.pre li{opacity:0;transform:translateY(16px)}
+.how.in li{opacity:1;transform:none;
+  transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+.how.in li:nth-child(1){transition-delay:.04s}
+.how.in li:nth-child(2){transition-delay:.16s}
+.how.in li:nth-child(3){transition-delay:.28s}
+
+.how.pre li::before{transform:scale(.6);opacity:0}
+.how.in li::before{transform:none;opacity:1;
+  transition:transform .5s cubic-bezier(.3,1.5,.5,1),opacity .4s ease,
+             background .25s ease,color .25s ease}
+.how.in li:nth-child(1)::before{transition-delay:.14s}
+.how.in li:nth-child(2)::before{transition-delay:.26s}
+.how.in li:nth-child(3)::before{transition-delay:.38s}
+
+.how li{transition:background .25s ease}
+.how li:hover::before{background:var(--amber);color:#06070a}
+
+@media (prefers-reduced-motion:reduce){
+  .how.pre li,.how.pre li::before{opacity:1;transform:none}
+}
+
+/* ---------- hero name: letter-by-letter reveal ---------- */
+.hero .inner > h1.name{animation:none;perspective:900px}
+h1.name .line{display:block}
+h1.name .line > span{
+  display:inline-block;
+  animation:letterIn .85s cubic-bezier(.16,.84,.26,1) backwards;
+  will-change:transform,opacity,filter;
+}
+@keyframes letterIn{
+  from{opacity:0;transform:translateY(.5em) rotateX(-70deg) scale(.94);filter:blur(10px)}
+  60% {opacity:1;filter:blur(0)}
+  to  {opacity:1;transform:none;filter:blur(0)}
+}
+/* warm sweep that passes across the name once as it lands */
+h1.name{position:relative;background-clip:text}
+h1.name::after{
+  content:"";position:absolute;inset:-4% -2%;pointer-events:none;
+  background:linear-gradient(100deg,transparent 38%,rgba(255,122,47,.22) 50%,transparent 62%);
+  transform:translateX(-120%);
+  animation:nameSweep 1.5s cubic-bezier(.3,.7,.3,1) .55s 1 both;
+}
+@keyframes nameSweep{to{transform:translateX(120%)}}
+
+@media (prefers-reduced-motion:reduce){
+  h1.name .line > span{animation:none}
+  h1.name::after{animation:none;opacity:0}
+}

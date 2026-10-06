@@ -1,10 +1,49 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, useEffect, useRef, Fragment } from 'react';
 import { SECTIONS, TOOLS, PROJECTS, CERTS } from './data.js';
 import Rail from './components/Rail.jsx';
 import Gallery from './components/Gallery.jsx';
 import ToolIcon from './components/ToolIcon.jsx';
 
+/* Steps are visible by default; the animation only engages once JS runs,
+   so nothing is ever stuck hidden. */
+function useReveal() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    el.classList.add('pre');
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) { el.classList.add('in'); io.disconnect(); }
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return ref;
+}
+
+/* Name reveals letter by letter on load. */
+function Name({ first, last }) {
+  let i = 0;
+  const letters = (word) =>
+    [...word].map((ch, k) => (
+      <span key={word + k} style={{ animationDelay: (0.14 + 0.035 * i++).toFixed(3) + 's' }}>
+        {ch}
+      </span>
+    ));
+  return (
+    <h1 className="name" aria-label={first + ' ' + last}>
+      <span className="line" aria-hidden="true">{letters(first)}</span>
+      <span className="line" aria-hidden="true">{letters(last)}</span>
+    </h1>
+  );
+}
+
 export default function App() {
+  const howRef = useReveal();
   const [active, setActive] = useState('top');
   const [pct, setPct] = useState(0);
   const [filter, setFilter] = useState('All');
@@ -45,7 +84,7 @@ export default function App() {
           <span className="glow" /><span className="grid" />
           <div className="inner">
             <p className="eyebrow">Portfolio · 2024 — 2026</p>
-            <h1>Tawfiq<br />Fakhouri</h1>
+            <Name first="Tawfiq" last="Fakhouri" />
             <p className="sub">Ten years old · <b>He finds the problem, then builds the answer</b></p>
             <p className="lede">
               Everything here is something Tawfiq actually built — robots that run, games he
@@ -70,7 +109,6 @@ export default function App() {
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17L21 12 6 3.5z" /></svg>
                 </span>
               </a>
-              <p className="fcaption">Tawfiq presenting AI LiveGuard · 2 minutes</p>
             </div>
 
             <div className="fcopy">
@@ -81,7 +119,7 @@ export default function App() {
                 the coach <b>see the tiredness before the injury</b>.
               </p>
 
-              <ol className="how">
+              <ol className="how" ref={howRef}>
                 <li>
                   <b>A sensor vest</b>
                   <span>Heart rate, speed and distance, straight off the player.</span>
