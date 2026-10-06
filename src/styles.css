@@ -699,3 +699,12 @@ h1.name::after{
 .chips{flex-direction:column;align-items:flex-start;gap:clamp(11px,1.4vw,16px)}
 .chips-awards{display:flex;flex-direction:column;align-items:flex-start;gap:9px}
 .chips-counts{display:flex;flex-wrap:wrap;gap:9px}
+
+/* counters get the same treatment as the award badges */
+.chips-counts .chip{
+  border-color:var(--amber);
+  background:rgba(255,122,47,.12);
+  color:var(--text);
+  box-shadow:0 0 26px -6px rgba(255,122,47,.55);
+}
+.chips-counts .chip b{color:var(--amber);font-weight:600}
